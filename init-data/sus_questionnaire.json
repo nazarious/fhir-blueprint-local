@@ -1,0 +1,130 @@
+{
+  "resourceType": "Questionnaire",
+  "id": "german-sus-form",
+  "url": "http://mein-blueprint.de/fhir/Questionnaire/german-sus-form",
+  "title": "German System Usability Scale",
+  "status": "active",
+  "description": "Bitte überprüfen Sie die Antwort, die Ihre sofortige Antwort auf jede Aussage widerspiegelt. Bitte denken Sie nicht zu lange über jede Aussage nach.",
+  "item": [
+    {
+      "linkId": "sus-1",
+      "text": "Ich denke, dass ich dieses Produkt häufig verwenden möchte",
+      "type": "choice",
+      "answerOption": [
+        { "valueInteger": 1, "valueString": "Stimme überhaupt nicht zu (1)" },
+        { "valueInteger": 2 },
+        { "valueInteger": 3 },
+        { "valueInteger": 4 },
+        { "valueInteger": 5, "valueString": "Stimme voll und ganz zu (5)" }
+      ]
+    },
+    {
+      "linkId": "sus-2",
+      "text": "Ich fand das Produkt unnötig komplex",
+      "type": "choice",
+      "answerOption": [
+        { "valueInteger": 1, "valueString": "Stimme überhaupt nicht zu (1)" },
+        { "valueInteger": 2 },
+        { "valueInteger": 3 },
+        { "valueInteger": 4 },
+        { "valueInteger": 5, "valueString": "Stimme voll und ganz zu (5)" }
+      ]
+    },
+    {
+      "linkId": "sus-3",
+      "text": "Ich dachte, das Produkt war einfach zu bedienen",
+      "type": "choice",
+      "answerOption": [
+        { "valueInteger": 1, "valueString": "Stimme überhaupt nicht zu (1)" },
+        { "valueInteger": 2 },
+        { "valueInteger": 3 },
+        { "valueInteger": 4 },
+        { "valueInteger": 5, "valueString": "Stimme voll und ganz zu (5)" }
+      ]
+    },
+    {
+      "linkId": "sus-4",
+      "text": "Ich denke, dass ich die Unterstützung einer technischen Person brauche, um dieses Produkt nutzen zu können",
+      "type": "choice",
+      "answerOption": [
+        { "valueInteger": 1, "valueString": "Stimme überhaupt nicht zu (1)" },
+        { "valueInteger": 2 },
+        { "valueInteger": 3 },
+        { "valueInteger": 4 },
+        { "valueInteger": 5, "valueString": "Stimme voll und ganz zu (5)" }
+      ]
+    },
+    {
+      "linkId": "sus-5",
+      "text": "Ich fand, die verschiedenen Funktionen in diesem Produkt waren gut integriert",
+      "type": "choice",
+      "answerOption": [
+        { "valueInteger": 1, "valueString": "Stimme überhaupt nicht zu (1)" },
+        { "valueInteger": 2 },
+        { "valueInteger": 3 },
+        { "valueInteger": 4 },
+        { "valueInteger": 5, "valueString": "Stimme voll und ganz zu (5)" }
+      ]
+    },
+    {
+      "linkId": "sus-6",
+      "text": "Ich dachte, dass dieses Produkt nicht konsistent genug war",
+      "type": "choice",
+      "answerOption": [
+        { "valueInteger": 1, "valueString": "Stimme überhaupt nicht zu (1)" },
+        { "valueInteger": 2 },
+        { "valueInteger": 3 },
+        { "valueInteger": 4 },
+        { "valueInteger": 5, "valueString": "Stimme voll und ganz zu (5)" }
+      ]
+    },
+    {
+      "linkId": "sus-7",
+      "text": "Ich würde mir vorstellen, dass die meisten Leute sehr schnell lernen würden, dieses Produkt zu benutzen",
+      "type": "choice",
+      "answerOption": [
+        { "valueInteger": 1, "valueString": "Stimme überhaupt nicht zu (1)" },
+        { "valueInteger": 2 },
+        { "valueInteger": 3 },
+        { "valueInteger": 4 },
+        { "valueInteger": 5, "valueString": "Stimme voll und ganz zu (5)" }
+      ]
+    },
+    {
+      "linkId": "sus-8",
+      "text": "Ich fand dieses Produkt sehr umständlich zu benutzen",
+      "type": "choice",
+      "answerOption": [
+        { "valueInteger": 1, "valueString": "Stimme überhaupt nicht zu (1)" },
+        { "valueInteger": 2 },
+        { "valueInteger": 3 },
+        { "valueInteger": 4 },
+        { "valueInteger": 5, "valueString": "Stimme voll und ganz zu (5)" }
+      ]
+    },
+    {
+      "linkId": "sus-9",
+      "text": "Ich habe mich sehr selbstsicher gefühlt, dieses Produkt zu verwenden",
+      "type": "choice",
+      "answerOption": [
+        { "valueInteger": 1, "valueString": "Stimme überhaupt nicht zu (1)" },
+        { "valueInteger": 2 },
+        { "valueInteger": 3 },
+        { "valueInteger": 4 },
+        { "valueInteger": 5, "valueString": "Stimme voll und ganz zu (5)" }
+      ]
+    },
+    {
+      "linkId": "sus-10",
+      "text": "Ich musste eine Menge Dinge lernen, bevor ich mit diesem Produkt loslegen konnte",
+      "type": "choice",
+      "answerOption": [
+        { "valueInteger": 1, "valueString": "Stimme überhaupt nicht zu (1)" },
+        { "valueInteger": 2 },
+        { "valueInteger": 3 },
+        { "valueInteger": 4 },
+        { "valueInteger": 5, "valueString": "Stimme voll und ganz zu (5)" }
+      ]
+    }
+  ]
+}

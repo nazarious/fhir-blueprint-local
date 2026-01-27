@@ -1,0 +1,49 @@
+version: '3.8'
+services:
+  # Backend: HAPI FHIR Server
+  fhir-server:
+    image: hapiproject/hapi:latest
+    container_name: blueprint-hapi-fhir
+    ports:
+      - "8080:8080"
+    environment:
+      - hapi_fhir_tester_0_name=BlueprintServer
+      - hapi_fhir_tester_0_server_address=http://localhost:8080/fhir
+      - hapi_fhir_cors_allowed_origin=http://localhost:3000,http://localhost
+      - spring_datasource_url=jdbc:h2:mem:fhir;DB_CLOSE_DELAY=-1
+      - spring_datasource_driverClassName=org.h2.Driver
+      - spring_jpa_database-platform=org.hibernate.dialect.H2Dialect
+      - hapi_fhir_fhir_version=R4
+    restart: always
+
+# NEU: Der automatische Daten-Loader
+  data-loader:
+    image: alpine:latest
+    container_name: blueprint-data-loader
+    depends_on:
+      - fhir-server
+    volumes:
+      - ./init-data:/scripts
+    entrypoint: ["/bin/sh", "-c"]
+    command: 
+      - |
+        apk add --no-cache curl
+        echo "Warte auf FHIR-Server..."
+        until curl -s -o /dev/null --head --fail http://fhir-server:8080/fhir/metadata; do
+          sleep 2
+        done
+        echo "Server bereit! Lade Daten hoch..."
+        curl -X PUT -H "Content-Type: application/fhir+json" -d @/scripts/patient_mueller.json http://fhir-server:8080/fhir/Patient/mueller-ex
+        curl -X PUT -H "Content-Type: application/fhir+json" -d @/scripts/patient_schmidt.json http://fhir-server:8080/fhir/Patient/schmidt-ex
+        curl -X PUT -H "Content-Type: application/fhir+json" -d @/scripts/patient_bauer.json http://fhir-server:8080/fhir/Patient/bauer-ex
+        curl -X PUT -H "Content-Type: application/fhir+json" -d @/scripts/sus_questionnaire.json http://fhir-server:8080/fhir/Questionnaire/german-sus-form
+        echo "Upload abgeschlossen."
+
+  # Frontend: Dein React-Portal
+  web-client:
+    build: ./web-client
+    container_name: blueprint-frontend
+    ports:
+      - "3000:80" # Wir lassen es auf 3000, damit du nichts an deinen Lesezeichen ändern musst
+    depends_on:
+      - fhir-server
